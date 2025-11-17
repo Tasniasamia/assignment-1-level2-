@@ -88,20 +88,25 @@ const myBook: Book = {
   printBookDetails(myBook);
 
   //Problem-7
-  function getUniqueValues (array1:number[],array2:number[]){
+   function getUniqueValues (array1:Array<string|number>,array2:Array<string|number>){
+    let newArr=[...array1];
+    for(let i=0; i<array2.length;i++){
+      let found=false;
+     for(let j=0;j<newArr.length;j++){
+      if(array2[i]===newArr[j]){
+        console.log(array2[i])
+        found=true;
+        break;
+      }
+      
+     }
 
-let newArr:number[]=[...array1,...array2];
-let filterArr:number[]=[];
-for(let i=0;i<newArr?.length;i++){
-  for(let j=0;j<filterArr?.length;j++){
-   if(filterArr[j]!==newArr[i]){
-    filterArr.push(newArr[i]);
-   }
-   continue;
-  }
-}
+     if(!found){
+      newArr=[...newArr,array2[i]]
+     }
+    }
 
-return filterArr;
+    return newArr;
 
 }
 const array1 = [1, 2, 3, 4, 5];
