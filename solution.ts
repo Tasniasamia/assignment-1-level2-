@@ -128,4 +128,3 @@ const products = [
     { name: 'Bag', price: 50, quantity: 1, discount: 20 },
   ];
   
-  console.log(calculateTotalPrice(products));
