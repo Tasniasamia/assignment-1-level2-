@@ -47,7 +47,7 @@ console.log(person2.getDetails());
 function filterByRating(
   array: { title: string; rating: number }[]
 ): Array<{ title: string; rating: number }> {
-  return array?.filter((i, index) => i?.rating > 4);
+  return array?.filter((i, index) => i?.rating >= 4);
 }
 const books = [
   { title: "Book A", rating: 4.5 },
@@ -59,7 +59,7 @@ console.log(filterByRating(books));
 function filterActiveUsers(
   array: { id: number; name: string; email: string; isActive: boolean }[]
 ): Array<{ id: number; name: string; email: string; isActive: boolean }> {
-  return array.filter((i, index) => i?.isActive);
+  return array.filter((i) => i?.isActive);
 }
 const users = [
     { id: 1, name: 'Rakib', email: 'rakib@example.com', isActive: true },
@@ -94,7 +94,6 @@ const myBook: Book = {
       let found=false;
      for(let j=0;j<newArr.length;j++){
       if(array2[i]===newArr[j]){
-        console.log(array2[i])
         found=true;
         break;
       }
@@ -130,4 +129,3 @@ const products = [
   ];
   
   console.log(calculateTotalPrice(products));
-  console.log(calculateTotalPrice([]));
