@@ -46,7 +46,7 @@ type UserInfo = keyof User;
 এখানে UserInfo → "name" | "age" return করবে।
 
 keyof ব্যবহারের সবচেয়ে বড় সুবিধা হলো—
- একই টাইপ বার বার declare করা লাগে না। interface বা type বারবার লিখে memory খরচ করার দরকার পড়ে না। এক জায়গায় টাইপ লিখে keyof দিয়ে সহজে keys বের করা যায়।
+একই টাইপ বার বার declare করা লাগে না। interface বা type বারবার লিখে memory খরচ করার দরকার পড়ে না। এক জায়গায় টাইপ লিখে keyof দিয়ে সহজে keys বের করা যায়।
 কেন enum-এর বদলে অনেক Senior Developer type + keyof ব্যবহার করেন?
 TypeScript-এ enum এখনও পুরোপুরি stable নয় এবং কিছু জায়গায় এর আচরণ অদ্ভুত হতে পারে। এজন্য Senior Developer-রা আধুনিক ও নিরাপদ পদ্ধতি হিসেবে সাধারণত as const + typeof + keyof ব্যবহার করেন।
 উদাহরণ:
@@ -55,6 +55,7 @@ const userRoles = {
     Editor: 'Editor',
     User: 'User'
 } as const;
+
 এখন as const ব্যবহারের ফলে userRoles immutable হয়ে যায় এবং এর প্রতিটি মান literal type হিসেবে আচরণ করে, অর্থাৎ:
 ADMIN
 Editor
