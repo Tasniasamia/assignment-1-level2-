@@ -2,7 +2,7 @@
 
 Interface এবং Type – দুটোকে আমরা অনেক সময় একই মনে করি, কিন্তু আসলে একই না
 অনেকেই মনে করেন TypeScript এর interface এবং type একি জিনিস। কিন্তু প্রকৃতপক্ষে এদের মধ্যে বেশ কিছু পার্থক্য রয়েছে।
-Interface
+
 Interface সাধারণত object type বা data-এর structure তৈরি করার জন্য ব্যবহার করা হয়।
  এটি সাধারণত single type, array type, বা primitive type নির্ধারণ করার জন্য ব্যবহার হয় না।
  Interface আরেকটি interface-কে extend করতে পারে।
@@ -16,7 +16,6 @@ interface Details extends Person {
   address: string;
 }
 
-Type
 Type দিয়ে আমরা primitive, collection, সব ধরনের ডেটার structure তৈরি করতে পারি।
  Type প্রিমিটিভ এবং নন-প্রিমিটিভ – দু’ধরনের ডেটার সাথেই কাজ করে।
  এটির নির্দিষ্ট কোনো structure থাকে না, বিভিন্ন ধরনের shape তৈরি করা যায়।
@@ -63,9 +62,8 @@ User
 exact literal হিসেবে থাকবে।
 এভাবে টাইপ বের করা যায়:
 (typeof userRoles)[keyof typeof userRoles]
-
 এটি মূলত ADMIN | Editor | User টাইপকে নির্দেশ করে।
-example
+উদাহরণ:
 var getPermission = function (
   role: (typeof userRoles)[keyof typeof userRoles]
 ) {
